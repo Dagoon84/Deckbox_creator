@@ -43,7 +43,7 @@ Sprache wählbar: Deutsch, English, Français, Español, Italiano, Nederlands, P
 | Mini American | 41 × 63 | 45 × 66,5 | 42 × 64 |
 | Eigenes Maß | eingeben | Karte + 4,5 / + 5 | Karte + 1 |
 
-Namen wie bei den gängigen Sleeve-Herstellern (z. B. Mayday).
+Namen wie bei den Sleeve-Herstellern.
 Mit Sleeves: gemessene bzw. gedruckte Werte. Ohne Sleeves: Vorschlag (0,5 mm Luft je Seite),
 noch nicht gedruckt. Höhe = Deckhöhe + 1,5 mm Luft. Kartenanzahl: 0,8 mm je Karte mit Sleeve,
 0,3 mm ohne.
@@ -63,15 +63,5 @@ die Teile drucken ohne Stützen.
 - Texte: [`js/i18n.js`](js/i18n.js) – neue Sprache: Eintrag in `SPRACHEN` und `T`
 - Lokal testen: `python -m http.server 8765` im Repo-Ordner, dann http://localhost:8765
 
-Geprüft (2026-10-19): Box 67,5 × 93,3 × 20 mm = 17,1 cm³, Kappe 6,9 cm³ – identisch mit dem
-build123d-Modell; 3MF geschlossen (trimesh), von Bambu Studio gesliced.
-
 ## Änderungen
 
-- 2026-10-19 – Erste Version: 6 Formate + eigenes, mit/ohne Sleeves, Deckhöhe oder Kartenanzahl,
-  editierbare Innenmaße, 3D-Vorschau, 3MF-Download.
-- 2026-10-19 – Formatnamen (Standard, Euro, Chimera, American, 7 Wonders, Dixit, Mini Euro,
-  Mini American) über der Kartenauswahl; neue Formate 65 × 100 und 80 × 120; „Deckhöhe“ heißt
-  „Deckgröße“; Sprachauswahl mit 7 Sprachen.
-- 2026-10-19 – Japanisch und Koreanisch ergänzt (9 Sprachen), Schriften mit CJK-Ersatz (Yu Gothic, Malgun Gothic).
-- 2026-10-19 – Standard mit Sleeves: Fach 67,5 × 93,3 → 68 × 93 (Nutzerwunsch).
