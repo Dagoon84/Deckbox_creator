@@ -3,6 +3,8 @@
 Web-Tool für 3D-gedruckte Kartenboxen mit Rastkappe. Läuft komplett im Browser – kein Server,
 keine Installation.
 
+**Online:** https://dagoon84.github.io/Deckbox_creator/
+
 **Start (lokal):** `start.bat` doppelklicken – startet einen kleinen Webserver und öffnet
 http://localhost:8765 im Browser. Das Fenster offen lassen, solange das Tool läuft. (Die
 `index.html` direkt zu öffnen geht nicht: Browser laden die CAD-Bibliothek nicht von `file://`.)
