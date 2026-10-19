@@ -8,7 +8,7 @@ import { SPRACHEN, T } from './i18n.js';
 // Card formats: common name, card size without sleeve (B × L) and the inner size for sleeved
 // cards, taken from printed boxes / user measurements (Inserts/Standard-Kartenbox, 2026-10-19).
 const FORMATE = [
-  { id: '63.5x88', name: 'Standard', karte: [63.5, 88], sleeve: [67.5, 93.3] },
+  { id: '63.5x88', name: 'Standard', karte: [63.5, 88], sleeve: [68, 93] },
   { id: '59x92', name: 'Euro', karte: [59, 92], sleeve: [63.5, 97.3] },
   { id: '57.5x89', name: 'Chimera', karte: [57.5, 89], sleeve: [62, 93] },
   { id: '56x87', name: 'American', karte: [56, 87], sleeve: [60.5, 91] },

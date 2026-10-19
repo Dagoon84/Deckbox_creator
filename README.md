@@ -33,7 +33,7 @@ Sprache wählbar: Deutsch, English, Français, Español, Italiano, Nederlands, P
 
 | Name | Karte (ohne Sleeve) | Fach innen mit Sleeves | Fach innen ohne Sleeves |
 |---|---|---|---|
-| Standard | 63,5 × 88 | 67,5 × 93,3 | 64,5 × 89 |
+| Standard | 63,5 × 88 | 68 × 93 | 64,5 × 89 |
 | Euro | 59 × 92 | 63,5 × 97,3 | 60 × 93 |
 | Chimera | 57,5 × 89 | 62 × 93 | 58,5 × 90 |
 | American | 56 × 87 | 60,5 × 91 | 57 × 88 |
@@ -74,3 +74,4 @@ build123d-Modell; 3MF geschlossen (trimesh), von Bambu Studio gesliced.
   Mini American) über der Kartenauswahl; neue Formate 65 × 100 und 80 × 120; „Deckhöhe“ heißt
   „Deckgröße“; Sprachauswahl mit 7 Sprachen.
 - 2026-10-19 – Japanisch und Koreanisch ergänzt (9 Sprachen), Schriften mit CJK-Ersatz (Yu Gothic, Malgun Gothic).
+- 2026-10-19 – Standard mit Sleeves: Fach 67,5 × 93,3 → 68 × 93 (Nutzerwunsch).
