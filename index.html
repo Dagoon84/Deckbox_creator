@@ -23,6 +23,9 @@
   --warn: #9a5a00;
   --error: #b3261e;
   --stage: #dfe5eb;
+  --pp: #003087;          /* PayPal-Blau */
+  --pp-ink: #ffffff;
+  --pp-heart: #e8912d;
   --f-display: "Bricolage Grotesque", "Segoe UI", "Yu Gothic UI", "Malgun Gothic", "Noto Sans CJK JP", system-ui, sans-serif;
   --f-body: "IBM Plex Sans", "Segoe UI", "Yu Gothic UI", "Meiryo", "Malgun Gothic", "Apple SD Gothic Neo", "Hiragino Sans", "Noto Sans CJK JP", system-ui, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
@@ -32,13 +35,13 @@
   :root:not([data-theme="light"]) {
     --bg: #11171d; --panel: #18212a; --ink: #e6edf3; --muted: #93a1ae; --line: #2a3742;
     --box: #6f9fcc; --lid: #f0a24a; --accent: #7fb0dd; --accent-ink: #0d1620;
-    --warn: #e0a54a; --error: #ff8a80; --stage: #0d1318; color-scheme: dark;
+    --warn: #e0a54a; --error: #ff8a80; --stage: #0d1318; --pp: #ffc439; --pp-ink: #111111; --pp-heart: #003087; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #11171d; --panel: #18212a; --ink: #e6edf3; --muted: #93a1ae; --line: #2a3742;
   --box: #6f9fcc; --lid: #f0a24a; --accent: #7fb0dd; --accent-ink: #0d1620;
-  --warn: #e0a54a; --error: #ff8a80; --stage: #0d1318; color-scheme: dark;
+  --warn: #e0a54a; --error: #ff8a80; --stage: #0d1318; --pp: #ffc439; --pp-ink: #111111; --pp-heart: #003087; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -122,6 +125,21 @@ input.edited { border-color: var(--lid); }
 }
 .btn.primary { background: var(--accent); color: var(--accent-ink); }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.support {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
+}
+.support-text { min-width: 0; flex: 1 1 280px; }
+.support h2 { margin: 0 0 2px; font: 600 17px/1.2 var(--f-display); }
+.support p { margin: 0; color: var(--muted); font-size: 14px; }
+.pp {
+  display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; border-radius: 999px;
+  background: var(--pp); color: var(--pp-ink); font: 600 15px var(--f-body); text-decoration: none;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--pp) 60%, black); transition: transform .12s ease, filter .12s ease;
+}
+.pp svg { color: var(--pp-heart); }
+.pp:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.pp:active { transform: none; }
 footer { color: var(--muted); font-size: 13px; }
 footer p { margin: 0 0 6px; max-width: 80ch; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -206,6 +224,17 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
       </div>
     </section>
   </main>
+
+  <aside class="support" aria-labelledby="supportH">
+    <div class="support-text">
+      <h2 id="supportH" data-i18n="supportH"></h2>
+      <p data-i18n="supportP"></p>
+    </div>
+    <a class="pp" href="https://paypal.me/Dag00n" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 4.5 6.8 4.5c2.1 0 3.6 1.1 4.4 2.5.8-1.4 2.3-2.5 4.4-2.5 3.8 0 5.9 4 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg>
+      <span data-i18n="supportBtn"></span>
+    </a>
+  </aside>
 
   <footer>
     <p data-i18n="foot1"></p>

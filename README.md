@@ -7,6 +7,8 @@ keine Installation.
 http://localhost:8765 im Browser. Das Fenster offen lassen, solange das Tool läuft. (Die
 `index.html` direkt zu öffnen geht nicht: Browser laden die CAD-Bibliothek nicht von `file://`.)
 
+Unterstützen: https://paypal.me/Dag00n (Button unten im Tool).
+
 Sprache wählbar: Deutsch, English, Français, Español, Italiano, Nederlands, Polski, 日本語, 한국어
 (Browsersprache als Vorgabe, Auswahl wird im Browser gemerkt).
 
