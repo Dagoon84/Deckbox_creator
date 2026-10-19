@@ -60,7 +60,10 @@ die Teile drucken ohne Stützen.
 
 - Geometrie: [`js/deckbox.js`](js/deckbox.js) mit [manifold-3d](https://github.com/elalish/manifold)
   3.5.3 (WebAssembly, Apache-2.0, liegt in `vendor/`)
-- 3D-Vorschau: three.js 0.180.0 (CDN), 3MF-Zip: fflate 0.8.2 (CDN)
+- 3D-Vorschau: three.js 0.180.0, 3MF-Zip: fflate 0.8.2, Schriften: Bricolage Grotesque, IBM Plex
+  (OFL) – alles lokal in `vendor/`, die Seite lädt nichts von fremden Servern (DSGVO)
+- Impressum und Datenschutz: `impressum.html`, `datenschutz.html` – gelb markierte Platzhalter
+  vor der Veröffentlichung ausfüllen
 - 3MF-Writer: [`js/export3mf.js`](js/export3mf.js)
 - Texte: [`js/i18n.js`](js/i18n.js) – neue Sprache: Eintrag in `SPRACHEN` und `T`
 - Lokal testen: `python -m http.server 8765` im Repo-Ordner, dann http://localhost:8765

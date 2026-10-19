@@ -41,6 +41,7 @@ export const T = {
     foot1: 'Aufbau: Wand 2,6 mm, Boden 1,2 mm, Kappe mit 5-mm-Rand oben und unten (unter der Box verstaubar) und Rastnoppen an den Ecken, Griffkerben an den Stirnseiten, Drückloch im Boden, Rautengitter in der Kappe. Druck ohne Stützen.',
     foot2: 'Die Werte ohne Sleeves sind ein Vorschlag (Karte + 1 mm). Vor einer Serie eine Box als Passungstest drucken.',
     supportH: 'Gefällt dir der Deckbox Creator?', supportP: 'Das Tool ist kostenlos. Wenn es dir hilft, freue ich mich über eine kleine Unterstützung.', supportBtn: 'Mit PayPal unterstützen',
+    impressum: 'Impressum', privacy: 'Datenschutz',
   },
   en: {
     lang: 'Language',
@@ -70,6 +71,7 @@ export const T = {
     foot1: 'Design: 2.6 mm walls, 1.2 mm floor, lid with a 5 mm rim at the top and bottom (stores under the box during play) and snap bumps at the corners, finger notches at both ends, push-out hole in the floor, diamond grid in the lid. Prints without supports.',
     foot2: 'Unsleeved values are a suggestion (card + 1 mm). Print one box as a fit test before printing a batch.',
     supportH: 'Enjoying Deckbox Creator?', supportP: 'The tool is free. If it helps you, a small contribution is much appreciated.', supportBtn: 'Support with PayPal',
+    impressum: 'Legal notice', privacy: 'Privacy',
   },
   fr: {
     lang: 'Langue',
@@ -99,6 +101,7 @@ export const T = {
     foot1: 'Conception : parois 2,6 mm, fond 1,2 mm, couvercle avec rebord de 5 mm en haut et en bas (se range sous la boîte pendant la partie) et ergots aux coins, encoches de préhension aux deux extrémités, trou de poussée dans le fond, grille en losanges dans le couvercle. Impression sans supports.',
     foot2: 'Les valeurs sans protège-cartes sont une proposition (carte + 1 mm). Imprimez d’abord une boîte pour tester l’ajustement.',
     supportH: 'Deckbox Creator vous plaît ?', supportP: 'L’outil est gratuit. S’il vous est utile, un petit soutien me fait très plaisir.', supportBtn: 'Soutenir avec PayPal',
+    impressum: 'Mentions légales', privacy: 'Confidentialité',
   },
   es: {
     lang: 'Idioma',
@@ -128,6 +131,7 @@ export const T = {
     foot1: 'Diseño: paredes de 2,6 mm, fondo de 1,2 mm, tapa con borde de 5 mm arriba y abajo (se guarda bajo la caja durante la partida) y salientes de encaje en las esquinas, muescas para los dedos en ambos extremos, agujero para empujar en el fondo, rejilla de rombos en la tapa. Se imprime sin soportes.',
     foot2: 'Los valores sin fundas son una propuesta (carta + 1 mm). Imprime primero una caja como prueba de ajuste.',
     supportH: '¿Te gusta Deckbox Creator?', supportP: 'La herramienta es gratuita. Si te resulta útil, agradezco mucho un pequeño apoyo.', supportBtn: 'Apoyar con PayPal',
+    impressum: 'Aviso legal', privacy: 'Privacidad',
   },
   it: {
     lang: 'Lingua',
@@ -157,6 +161,7 @@ export const T = {
     foot1: 'Struttura: pareti 2,6 mm, fondo 1,2 mm, coperchio con bordo di 5 mm sopra e sotto (si ripone sotto la scatola durante il gioco) e nottolini a scatto agli angoli, tacche per le dita su entrambe le estremità, foro di spinta nel fondo, griglia a rombi nel coperchio. Si stampa senza supporti.',
     foot2: 'I valori senza bustine sono una proposta (carta + 1 mm). Stampa prima una scatola come prova di misura.',
     supportH: 'Ti piace Deckbox Creator?', supportP: 'Lo strumento è gratuito. Se ti è utile, un piccolo sostegno è molto gradito.', supportBtn: 'Sostieni con PayPal',
+    impressum: 'Note legali', privacy: 'Privacy',
   },
   nl: {
     lang: 'Taal',
@@ -186,6 +191,7 @@ export const T = {
     foot1: 'Opbouw: wand 2,6 mm, bodem 1,2 mm, deksel met rand van 5 mm boven en onder (tijdens het spel onder de doos op te bergen) en kliknokjes in de hoeken, vingeruitsparingen aan beide kopse kanten, duwgat in de bodem, ruitjesrooster in het deksel. Print zonder support.',
     foot2: 'De waarden zonder sleeves zijn een voorstel (kaart + 1 mm). Print eerst één doos als pastest.',
     supportH: 'Vind je Deckbox Creator handig?', supportP: 'De tool is gratis. Als hij je helpt, waardeer ik een kleine bijdrage enorm.', supportBtn: 'Steun via PayPal',
+    impressum: 'Colofon', privacy: 'Privacy',
   },
   pl: {
     lang: 'Język',
@@ -215,6 +221,7 @@ export const T = {
     foot1: 'Budowa: ścianki 2,6 mm, dno 1,2 mm, pokrywka z rantem 5 mm u góry i u dołu (podczas gry chowa się pod pudełkiem) i zatrzaskami w narożnikach, wycięcia na palce na obu końcach, otwór do wypychania w dnie, kratka w romby w pokrywce. Druk bez podpór.',
     foot2: 'Wartości dla kart bez koszulek to propozycja (karta + 1 mm). Przed serią wydrukuj jedno pudełko jako test dopasowania.',
     supportH: 'Podoba ci się Deckbox Creator?', supportP: 'Narzędzie jest darmowe. Jeśli ci pomaga, będę wdzięczny za drobne wsparcie.', supportBtn: 'Wesprzyj przez PayPal',
+    impressum: 'Nota prawna', privacy: 'Prywatność',
   },
   ja: {
     lang: '言語',
@@ -244,6 +251,7 @@ export const T = {
     foot1: '構造: 壁 2.6 mm、底 1.2 mm。フタは上下に 5 mm の縁があり（プレイ中はボックスの下に収納可能）、角にスナップ用の突起があります。両端に指掛けの切り欠き、底に押し出し穴、フタにひし形の格子。サポートなしで印刷できます。',
     foot2: 'スリーブなしの値は提案値です（カード + 1 mm）。まとめて印刷する前に、1個で合わせを確認してください。',
     supportH: 'Deckbox Creator は役に立ちましたか？', supportP: 'このツールは無料です。気に入っていただけたら、ささやかなご支援をいただけるとうれしいです。', supportBtn: 'PayPal で支援する',
+    impressum: '運営者情報', privacy: 'プライバシー',
   },
   ko: {
     lang: '언어',
@@ -273,5 +281,6 @@ export const T = {
     foot1: '구조: 벽 2.6 mm, 바닥 1.2 mm, 위아래에 5 mm 테두리가 있는 뚜껑(게임 중에는 박스 아래에 끼워 보관)과 모서리의 스냅 돌기, 양쪽 끝의 손가락 홈, 바닥의 밀어내기 구멍, 뚜껑의 마름모 격자. 서포트 없이 출력할 수 있습니다.',
     foot2: '슬리브 없음 값은 제안값입니다(카드 + 1 mm). 여러 개를 출력하기 전에 하나로 맞춤을 확인하세요.',
     supportH: 'Deckbox Creator가 마음에 드시나요?', supportP: '이 도구는 무료입니다. 도움이 되셨다면 작은 후원도 큰 힘이 됩니다.', supportBtn: 'PayPal로 후원하기',
+    impressum: '법적 고지', privacy: '개인정보 처리방침',
   },
 };

@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deckbox Creator</title>
 <meta name="description" content="Kartenbox mit Rastkappe für den 3D-Druck erstellen und als 3MF herunterladen.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="vendor/fonts/fonts.css">
 <style>
 /* Layout: zwei Spalten – links Eingabe in vier Schritten, rechts Werkbank mit 3D-Vorschau und Download */
 :root {
@@ -142,12 +140,14 @@ input.edited { border-color: var(--lid); }
 .pp:active { transform: none; }
 footer { color: var(--muted); font-size: 13px; }
 footer p { margin: 0 0 6px; max-width: 80ch; }
+.legal { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; }
+.legal a { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 <script type="importmap">
 { "imports": {
-  "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+  "three": "./vendor/three/three.module.js",
+  "three/addons/": "./vendor/three/addons/"
 } }
 </script>
 </head>
@@ -239,6 +239,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
   <footer>
     <p data-i18n="foot1"></p>
     <p data-i18n="foot2"></p>
+    <nav class="legal"><a href="impressum.html" data-i18n="impressum"></a><a href="datenschutz.html" data-i18n="privacy"></a></nav>
   </footer>
 </div>
 <script type="module" src="js/app.js"></script>

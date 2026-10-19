@@ -1,5 +1,5 @@
 // Minimal 3MF writer: one or more named meshes, units mm, zipped with fflate.
-import { zipSync, strToU8 } from 'https://cdn.jsdelivr.net/npm/fflate@0.8.2/esm/browser.js';
+import { zipSync, strToU8 } from '../vendor/fflate/browser.js';
 
 const fmt = v => {
   const s = v.toFixed(4);
