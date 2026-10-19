@@ -3,9 +3,12 @@
 Web-Tool für 3D-gedruckte Kartenboxen mit Rastkappe. Läuft komplett im Browser – kein Server,
 keine Installation.
 
+Sprache wählbar: Deutsch, English, Français, Español, Italiano, Nederlands, Polski
+(Browsersprache als Vorgabe, Auswahl wird im Browser gemerkt).
+
 1. Kartenformat wählen (oder eigenes Maß eingeben)
 2. Mit oder ohne Sleeves
-3. Deckhöhe in mm (oder Kartenanzahl)
+3. Deckgröße: Höhe des Kartenstapels in mm (oder Kartenanzahl)
 4. Innenmaße prüfen – Vorschlag wird angezeigt, jeder Wert lässt sich ändern
 5. **Box erstellen** → 3D-Vorschau → 3MF herunterladen (Box + Kappe, nur Box, nur Kappe)
 
@@ -24,16 +27,19 @@ keine Installation.
 
 ## Formate
 
-| Karte (ohne Sleeve) | Fach innen mit Sleeves | Fach innen ohne Sleeves |
-|---|---|---|
-| 63,5 × 88 | 67,5 × 93,3 | 64,5 × 89 |
-| 59 × 92 | 63,5 × 97,3 | 60 × 93 |
-| 57,5 × 89 | 62 × 93 | 58,5 × 90 |
-| 56 × 87 | 60,5 × 91 | 57 × 88 |
-| 44 × 68 | 49 × 72,5 | 45 × 69 |
-| 41 × 63 | 45 × 66,5 | 42 × 64 |
-| eigenes | Karte + 4,5 / + 5 | Karte + 1 |
+| Name | Karte (ohne Sleeve) | Fach innen mit Sleeves | Fach innen ohne Sleeves |
+|---|---|---|---|
+| Standard | 63,5 × 88 | 67,5 × 93,3 | 64,5 × 89 |
+| Euro | 59 × 92 | 63,5 × 97,3 | 60 × 93 |
+| Chimera | 57,5 × 89 | 62 × 93 | 58,5 × 90 |
+| American | 56 × 87 | 60,5 × 91 | 57 × 88 |
+| 7 Wonders | 65 × 100 | 69,5 × 104 | 66 × 101 |
+| Dixit | 80 × 120 | 84 × 124 | 81 × 121 |
+| Mini Euro | 44 × 68 | 49 × 72,5 | 45 × 69 |
+| Mini American | 41 × 63 | 45 × 66,5 | 42 × 64 |
+| Eigenes Maß | eingeben | Karte + 4,5 / + 5 | Karte + 1 |
 
+Namen wie bei den gängigen Sleeve-Herstellern (z. B. Mayday).
 Mit Sleeves: gemessene bzw. gedruckte Werte. Ohne Sleeves: Vorschlag (0,5 mm Luft je Seite),
 noch nicht gedruckt. Höhe = Deckhöhe + 1,5 mm Luft. Kartenanzahl: 0,8 mm je Karte mit Sleeve,
 0,3 mm ohne.
@@ -50,6 +56,7 @@ die Teile drucken ohne Stützen.
   3.5.3 (WebAssembly, Apache-2.0, liegt in `vendor/`)
 - 3D-Vorschau: three.js 0.180.0 (CDN), 3MF-Zip: fflate 0.8.2 (CDN)
 - 3MF-Writer: [`js/export3mf.js`](js/export3mf.js)
+- Texte: [`js/i18n.js`](js/i18n.js) – neue Sprache: Eintrag in `SPRACHEN` und `T`
 - Lokal testen: `python -m http.server 8765` im Repo-Ordner, dann http://localhost:8765
 
 Geprüft (2026-10-19): Box 67,5 × 93,3 × 20 mm = 17,1 cm³, Kappe 6,9 cm³ – identisch mit dem
@@ -59,3 +66,6 @@ build123d-Modell; 3MF geschlossen (trimesh), von Bambu Studio gesliced.
 
 - 2026-10-19 – Erste Version: 6 Formate + eigenes, mit/ohne Sleeves, Deckhöhe oder Kartenanzahl,
   editierbare Innenmaße, 3D-Vorschau, 3MF-Download.
+- 2026-10-19 – Formatnamen (Standard, Euro, Chimera, American, 7 Wonders, Dixit, Mini Euro,
+  Mini American) über der Kartenauswahl; neue Formate 65 × 100 und 80 × 120; „Deckhöhe“ heißt
+  „Deckgröße“; Sprachauswahl mit 7 Sprachen.

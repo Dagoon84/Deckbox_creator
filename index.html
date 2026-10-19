@@ -51,6 +51,13 @@ body {
 }
 .wrap { max-width: 1180px; margin: 0 auto; display: grid; gap: 24px; }
 header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+.brand { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.langsel { display: flex; align-items: center; gap: 8px; text-transform: none; letter-spacing: 0; font-size: 13px; }
+.langsel select { padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); font: inherit; }
+.fmt .nm { font: 600 12px/1.2 var(--f-body); color: var(--muted); text-align: center; min-height: 2.4em; display: grid; place-items: center; }
+.fmt[aria-pressed="true"] .nm { color: var(--accent); }
+.formats { align-items: stretch; }
+.fmt { align-content: space-between; }
 h1 { font: 800 clamp(28px, 4vw, 40px)/1.05 var(--f-display); margin: 0; letter-spacing: -0.01em; }
 h1 span { color: var(--lid); }
 header p { margin: 0; color: var(--muted); max-width: 52ch; }
@@ -128,75 +135,80 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 <body>
 <div class="wrap">
   <header>
-    <h1>Deckbox <span>Creator</span></h1>
-    <p>Kartenbox mit Rastkappe für den 3D-Druck. Format wählen, Deckhöhe eingeben, erstellen und als 3MF herunterladen.</p>
+    <div class="brand">
+      <h1>Deckbox <span>Creator</span></h1>
+      <label class="langsel" for="lang"><span data-i18n="lang">Sprache</span>
+        <select id="lang"></select>
+      </label>
+    </div>
+    <p data-i18n="tagline"></p>
   </header>
 
   <main>
-    <section class="steps" aria-label="Eingaben">
+    <section class="steps" aria-label="Input">
       <div class="step">
-        <h2>Kartenformat <small>Karte ohne Sleeve, mm</small></h2>
+        <h2><span data-i18n="fmtH"></span> <small data-i18n="fmtS"></small></h2>
         <div class="formats" id="formats"></div>
         <div class="fields two" id="customCard" hidden>
-          <label for="cardB">Kartenbreite<input type="number" id="cardB" step="0.5" min="20" value="63.5"></label>
-          <label for="cardL">Kartenlänge<input type="number" id="cardL" step="0.5" min="40" value="88"></label>
+          <label for="cardB"><span data-i18n="cardB"></span><input type="number" id="cardB" step="0.5" min="20" value="63.5"></label>
+          <label for="cardL"><span data-i18n="cardL"></span><input type="number" id="cardL" step="0.5" min="40" value="88"></label>
         </div>
       </div>
 
       <div class="step">
-        <h2>Sleeves</h2>
-        <div class="seg" role="group" aria-label="Sleeves">
-          <button type="button" id="sleeveOn" aria-pressed="true">Mit Sleeves</button>
-          <button type="button" id="sleeveOff" aria-pressed="false">Ohne Sleeves</button>
+        <h2 data-i18n="sleeves"></h2>
+        <div class="seg" role="group">
+          <button type="button" id="sleeveOn" aria-pressed="true" data-i18n="sleeveOn"></button>
+          <button type="button" id="sleeveOff" aria-pressed="false" data-i18n="sleeveOff"></button>
         </div>
       </div>
 
       <div class="step">
-        <h2>Deckhöhe <small>Stapel leicht gedrückt messen</small></h2>
+        <h2><span data-i18n="deckH"></span> <small data-i18n="deckS"></small></h2>
         <div class="fields two">
-          <label for="deck">Höhe des Kartenstapels (mm)<input type="number" id="deck" step="0.5" min="1" value="20"></label>
-          <label for="count">oder Anzahl Karten<input type="number" id="count" step="1" min="1" placeholder="z. B. 30"></label>
+          <label for="deck"><span data-i18n="deck"></span><input type="number" id="deck" step="0.5" min="1" value="20"></label>
+          <label for="count"><span data-i18n="count"></span><input type="number" id="count" step="1" min="1" data-i18n-ph="countPh"></label>
         </div>
-        <p class="hint" id="countHint">Bei Kartenanzahl rechnet das Tool mit 0,8 mm je Karte mit Sleeve, 0,3 mm ohne.</p>
+        <p class="hint" id="countHint"></p>
       </div>
 
       <div class="step">
-        <h2>Innenmaße <small>Fach, mm</small></h2>
+        <h2><span data-i18n="innerH"></span> <small data-i18n="innerS"></small></h2>
         <div class="fields">
-          <label for="innerB">Breite<input type="number" id="innerB" step="0.1" min="22"></label>
-          <label for="innerL">Länge<input type="number" id="innerL" step="0.1" min="45"></label>
-          <label for="innerH">Höhe<input type="number" id="innerH" step="0.1" min="9"></label>
+          <label for="innerB"><span data-i18n="innerB"></span><input type="number" id="innerB" step="0.1" min="22"></label>
+          <label for="innerL"><span data-i18n="innerL"></span><input type="number" id="innerL" step="0.1" min="45"></label>
+          <label for="innerH"><span data-i18n="innerHt"></span><input type="number" id="innerH" step="0.1" min="9"></label>
         </div>
         <div class="row">
-          <p class="hint" id="innerHint">Vorschlag aus Format, Sleeves und Deckhöhe (+1,5 mm Luft über dem Stapel). Alle Werte lassen sich ändern.</p>
-          <button type="button" class="linkbtn" id="resetInner" hidden>Vorschlag wiederherstellen</button>
+          <p class="hint" data-i18n="innerHint"></p>
+          <button type="button" class="linkbtn" id="resetInner" data-i18n="reset" hidden></button>
         </div>
       </div>
     </section>
 
-    <section class="bench" aria-label="Ergebnis">
+    <section class="bench" aria-label="Result">
       <div class="stage" id="stage">
-        <div class="legend"><span><i style="background:var(--box)"></i>Box</span><span><i style="background:var(--lid)"></i>Kappe</span></div>
-        <div class="status" id="status">Lade CAD-Kern …</div>
+        <div class="legend"><span><i style="background:var(--box)"></i><span data-i18n="box"></span></span><span><i style="background:var(--lid)"></i><span data-i18n="lid"></span></span></div>
+        <div class="status" id="status"></div>
       </div>
       <dl class="specs">
-        <div><dt>Außen L × B</dt><dd id="sOuter">–</dd></div>
-        <div><dt>Höhe geschlossen</dt><dd id="sHeight">–</dd></div>
-        <div><dt>Material ca.</dt><dd id="sWeight">–</dd></div>
+        <div><dt data-i18n="outer"></dt><dd id="sOuter">–</dd></div>
+        <div><dt data-i18n="height"></dt><dd id="sHeight">–</dd></div>
+        <div><dt data-i18n="weight"></dt><dd id="sWeight">–</dd></div>
       </dl>
       <p class="msg" id="msg"></p>
       <div class="actions">
-        <button type="button" class="btn primary" id="build" disabled>Box erstellen</button>
-        <button type="button" class="btn" id="dlBoth" disabled>3MF: Box + Kappe</button>
-        <button type="button" class="btn" id="dlBox" disabled>Nur Box</button>
-        <button type="button" class="btn" id="dlLid" disabled>Nur Kappe</button>
+        <button type="button" class="btn primary" id="build" disabled data-i18n="build"></button>
+        <button type="button" class="btn" id="dlBoth" disabled data-i18n="dlBoth"></button>
+        <button type="button" class="btn" id="dlBox" disabled data-i18n="dlBox"></button>
+        <button type="button" class="btn" id="dlLid" disabled data-i18n="dlLid"></button>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Aufbau: Wand 2,6 mm, Boden 1,2 mm, Kappe mit 5-mm-Rand oben und unten (unter der Box verstaubar) und Rastnoppen an den Ecken, Griffkerben an den Stirnseiten, Drückloch im Boden, Rautengitter in der Kappe. Druck ohne Stützen: Box mit dem Boden aufs Bett, Kappe mit der Platte aufs Bett. Getestet mit PLA, 0,4-mm-Düse, 0,2 mm Schichthöhe.</p>
-    <p>Die Werte mit Sleeves stammen aus gedruckten Boxen; ohne Sleeves ist es ein Vorschlag (Karte + 1 mm). Vor einer Serie eine Box als Passungstest drucken.</p>
+    <p data-i18n="foot1"></p>
+    <p data-i18n="foot2"></p>
   </footer>
 </div>
 <script type="module" src="js/app.js"></script>
