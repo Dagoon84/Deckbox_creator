@@ -7,7 +7,7 @@ keine Installation.
 http://localhost:8765 im Browser. Das Fenster offen lassen, solange das Tool läuft. (Die
 `index.html` direkt zu öffnen geht nicht: Browser laden die CAD-Bibliothek nicht von `file://`.)
 
-Sprache wählbar: Deutsch, English, Français, Español, Italiano, Nederlands, Polski
+Sprache wählbar: Deutsch, English, Français, Español, Italiano, Nederlands, Polski, 日本語, 한국어
 (Browsersprache als Vorgabe, Auswahl wird im Browser gemerkt).
 
 1. Kartenformat wählen (oder eigenes Maß eingeben)
@@ -73,3 +73,4 @@ build123d-Modell; 3MF geschlossen (trimesh), von Bambu Studio gesliced.
 - 2026-10-19 – Formatnamen (Standard, Euro, Chimera, American, 7 Wonders, Dixit, Mini Euro,
   Mini American) über der Kartenauswahl; neue Formate 65 × 100 und 80 × 120; „Deckhöhe“ heißt
   „Deckgröße“; Sprachauswahl mit 7 Sprachen.
+- 2026-10-19 – Japanisch und Koreanisch ergänzt (9 Sprachen), Schriften mit CJK-Ersatz (Yu Gothic, Malgun Gothic).

@@ -23,8 +23,8 @@
   --warn: #9a5a00;
   --error: #b3261e;
   --stage: #dfe5eb;
-  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-display: "Bricolage Grotesque", "Segoe UI", "Yu Gothic UI", "Malgun Gothic", "Noto Sans CJK JP", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", "Yu Gothic UI", "Meiryo", "Malgun Gothic", "Apple SD Gothic Neo", "Hiragino Sans", "Noto Sans CJK JP", system-ui, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
   color-scheme: light;
 }
@@ -42,6 +42,7 @@
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
+:lang(ko) body, :lang(ko) .fmt .nm { --f-body: "IBM Plex Sans", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans CJK KR", system-ui, sans-serif; word-break: keep-all; }
 html, body { margin: 0; }
 body {
   background: var(--bg); color: var(--ink); font: 15px/1.5 var(--f-body);
