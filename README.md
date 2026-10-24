@@ -41,14 +41,14 @@ Sprache wählbar: Deutsch, English, Français, Español, Italiano, Nederlands, P
 | American | 56 × 87 | 60,5 × 91 | 57 × 88 |
 | 7 Wonders | 65 × 100 | 69,5 × 104 | 66 × 101 |
 | Dixit | 80 × 120 | 84 × 124 | 81 × 121 |
-| Mini Euro | 44 × 68 | 49 × 72,5 | 45 × 69 |
+| Mini Euro | 44 × 68 | 48 × 73 | 45 × 69 |
 | Mini American | 41 × 63 | 45 × 66,5 | 42 × 64 |
 | Eigenes Maß | eingeben | Karte + 4,5 / + 5 | Karte + 1 |
 
 Namen wie bei den Sleeve-Herstellern.
 Mit Sleeves: gemessene bzw. gedruckte Werte. Ohne Sleeves: Vorschlag (0,5 mm Luft je Seite),
-noch nicht gedruckt. Höhe = Deckhöhe + 1,5 mm Luft. Kartenanzahl: 0,8 mm je Karte mit Sleeve,
-0,3 mm ohne.
+noch nicht gedruckt. Höhe = Deckhöhe + 1,5 mm Luft. Kartenanzahl: 0,6 mm je Karte
+(mit und ohne Sleeve).
 
 ## Druck
 

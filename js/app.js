@@ -14,14 +14,14 @@ const FORMATE = [
   { id: '56x87', name: 'American', karte: [56, 87], sleeve: [60.5, 91] },
   { id: '65x100', name: '7 Wonders', karte: [65, 100], sleeve: [69.5, 104] },
   { id: '80x120', name: 'Dixit', karte: [80, 120], sleeve: [84, 124] },
-  { id: '44x68', name: 'Mini Euro', karte: [44, 68], sleeve: [49, 72.5] },
+  { id: '44x68', name: 'Mini Euro', karte: [44, 68], sleeve: [48, 73] },
   { id: '41x63', name: 'Mini American', karte: [41, 63], sleeve: [45, 66.5] },
   { id: 'custom', name: null, karte: null, sleeve: null },
 ];
 const ZUGABE_SLEEVE = [4.5, 5.0];   // custom format with sleeves: card + this (average of the formats above)
 const ZUGABE_OHNE = 1.0;            // without sleeves: card + 1 mm (0.5 per side)
 const LUFT = 1.5;                   // air above the stack
-const DICKE = { true: 0.8, false: 0.3 };
+const DICKE = { true: 0.6, false: 0.6 };   // mm per card for the card-count helper (user value, sleeved and unsleeved)
 const PLA = 1.24;                   // g/cm³
 const BAURAUM = 250;
 
