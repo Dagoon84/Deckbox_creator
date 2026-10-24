@@ -26,6 +26,7 @@ const ECK_A = 10.0;                // corner grip recess: reaches this far along
                                    // (user idea 2026-10-24: levering the cap off at a corner works better
                                    // than from the middle of a long side, especially on large boxes)
 const RAUTE_WAHL = [11, 11.5, 12, 12.5, 13, 13.5, 14];
+const RAUTE_WAHL_BODEN = [7, 8, 9, 10, ...RAUTE_WAHL];   // floor: smaller diamonds fit beside the push-out slot of small boxes
 const RAUTE_STEG = 2.0;
 const GITTER_RAND = 3.0;
 
@@ -241,13 +242,16 @@ export function makeDeckbox(wasm) {
       }
     return pts;
   }
-  function rautengitter(w, l, z0, h) {
-    let best = RAUTE_WAHL[0], bestA = -1;
-    for (const r of RAUTE_WAHL) {
-      const a = rautenPunkte(w, l, r).length * r * r;
+  // frei(x, y, d): optional filter, false drops the diamond at (x, y) with half-diagonal d
+  function rautengitter(w, l, z0, h, frei = () => true, wahl = RAUTE_WAHL) {
+    const punkte = r => rautenPunkte(w, l, r).filter(([x, y]) => frei(x, y, r / 2));
+    let best = wahl[0], bestA = -1;
+    for (const r of wahl) {
+      const a = punkte(r).length * r * r;
       if (a >= bestA) { best = r; bestA = a; }
     }
-    const pts = rautenPunkte(w, l, best), a = best / Math.SQRT2;
+    const pts = punkte(best), a = best / Math.SQRT2;
+    if (!pts.length) return { gitter: null, raute: best, anzahl: 0 };
     const quad = CrossSection.square([a, a], true).rotate(45);
     const cs = CrossSection.union(pts.map(([x, y]) => quad.translate([x, y])));
     return { gitter: cs.extrude(h).translate([0, 0, z0]), raute: best, anzahl: pts.length };
@@ -259,10 +263,14 @@ export function makeDeckbox(wasm) {
       CrossSection.circle(DRUECK[1] / 2, 48).translate([-(DRUECK[0] - DRUECK[1]) / 2, 0]),
       CrossSection.circle(DRUECK[1] / 2, 48).translate([(DRUECK[0] - DRUECK[1]) / 2, 0]),
     ]).extrude(BODEN + 2).translate([0, 0, -1]);
-    return huelle(m).subtract(Manifold.union([
-      platte(m.FACH_L, m.FACH_B, R_FACH, BODEN, m.HB),
-      kerbe(m, 1), kerbe(m, -1), slot,
-    ]));
+    // floor grid (saves material): same diamonds as the lid, closed border to the walls and a
+    // closed ring around the push-out slot, which stays as it is
+    const sx = (DRUECK[0] - DRUECK[1]) / 2, sr = DRUECK[1] / 2;
+    const freiVomLoch = (x, y, d) => Math.hypot(Math.max(Math.abs(x) - sx, 0), y) - sr - d >= GITTER_RAND;
+    const boden = rautengitter(m.FACH_L - 2 * GITTER_RAND, m.FACH_B - 2 * GITTER_RAND, -1, BODEN + 2, freiVomLoch, RAUTE_WAHL_BODEN);
+    const weg = [platte(m.FACH_L, m.FACH_B, R_FACH, BODEN, m.HB), kerbe(m, 1), kerbe(m, -1), slot];
+    if (boden.gitter) weg.push(boden.gitter);
+    return huelle(m).subtract(Manifold.union(weg));
   }
 
   function kappe(m) {

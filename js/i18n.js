@@ -38,7 +38,7 @@ export const T = {
     errSize: v => `Die Box ist größer als ${v} mm und passt nicht auf das Druckbett.`,
     lowRim: 'Niedrige Box: Kappenrand 4 statt 5 mm. Die Kappe passt nur zu Boxen dieser Höhe.',
     capacity: (n, s) => `Platz für etwa ${n} Karten ${s ? 'mit' : 'ohne'} Sleeves.`,
-    foot1: 'Aufbau: Wand 2,6 mm, Boden 1,2 mm, Kappe mit 5-mm-Rand oben und unten (unter der Box verstaubar) und Rastnoppen an den Ecken, Griffmulden für die Kappe an den Ecken und langen Seiten, Griffkerben an den Stirnseiten, Drückloch im Boden, Rautengitter in der Kappe. Druck ohne Stützen.',
+    foot1: 'Aufbau: Wand 2,6 mm, Boden 1,2 mm, Kappe mit 5-mm-Rand oben und unten (unter der Box verstaubar) und Rastnoppen an den Ecken, Griffmulden für die Kappe an den Ecken und langen Seiten, Griffkerben an den Stirnseiten, Drückloch im Boden, Rautengitter in Boden und Kappe. Druck ohne Stützen.',
     foot2: 'Die Werte ohne Sleeves sind ein Vorschlag (Karte + 1 mm). Vor einer Serie eine Box als Passungstest drucken.',
   },
   en: {
@@ -66,7 +66,7 @@ export const T = {
     errSize: v => `The box is larger than ${v} mm and does not fit on the print bed.`,
     lowRim: 'Low box: lid rim 4 mm instead of 5 mm. This lid only fits boxes of this height.',
     capacity: (n, s) => `Room for about ${n} ${s ? 'sleeved' : 'unsleeved'} cards.`,
-    foot1: 'Design: 2.6 mm walls, 1.2 mm floor, lid with a 5 mm rim at the top and bottom (stores under the box during play) and snap bumps at the corners, grip recesses for the lid at the corners and long sides, finger notches at both ends, push-out hole in the floor, diamond grid in the lid. Prints without supports.',
+    foot1: 'Design: 2.6 mm walls, 1.2 mm floor, lid with a 5 mm rim at the top and bottom (stores under the box during play) and snap bumps at the corners, grip recesses for the lid at the corners and long sides, finger notches at both ends, push-out hole in the floor, diamond grid in the floor and lid. Prints without supports.',
     foot2: 'Unsleeved values are a suggestion (card + 1 mm). Print one box as a fit test before printing a batch.',
   },
   fr: {
@@ -94,7 +94,7 @@ export const T = {
     errSize: v => `La boîte dépasse ${v} mm et ne tient pas sur le plateau.`,
     lowRim: 'Boîte basse : rebord du couvercle de 4 mm au lieu de 5 mm. Ce couvercle ne va qu’aux boîtes de cette hauteur.',
     capacity: (n, s) => `Place pour environ ${n} cartes ${s ? 'avec' : 'sans'} protège-cartes.`,
-    foot1: 'Conception : parois 2,6 mm, fond 1,2 mm, couvercle avec rebord de 5 mm en haut et en bas (se range sous la boîte pendant la partie) et ergots aux coins, creux de préhension pour le couvercle aux coins et sur les grands côtés, encoches de préhension aux deux extrémités, trou de poussée dans le fond, grille en losanges dans le couvercle. Impression sans supports.',
+    foot1: 'Conception : parois 2,6 mm, fond 1,2 mm, couvercle avec rebord de 5 mm en haut et en bas (se range sous la boîte pendant la partie) et ergots aux coins, creux de préhension pour le couvercle aux coins et sur les grands côtés, encoches de préhension aux deux extrémités, trou de poussée dans le fond, grille en losanges dans le fond et le couvercle. Impression sans supports.',
     foot2: 'Les valeurs sans protège-cartes sont une proposition (carte + 1 mm). Imprimez d’abord une boîte pour tester l’ajustement.',
   },
   es: {
@@ -122,7 +122,7 @@ export const T = {
     errSize: v => `La caja supera ${v} mm y no cabe en la cama de impresión.`,
     lowRim: 'Caja baja: borde de la tapa de 4 mm en lugar de 5 mm. Esta tapa solo sirve para cajas de esta altura.',
     capacity: (n, s) => `Espacio para unas ${n} cartas ${s ? 'con' : 'sin'} fundas.`,
-    foot1: 'Diseño: paredes de 2,6 mm, fondo de 1,2 mm, tapa con borde de 5 mm arriba y abajo (se guarda bajo la caja durante la partida) y salientes de encaje en las esquinas, huecos para sacar la tapa en las esquinas y los lados largos, muescas para los dedos en ambos extremos, agujero para empujar en el fondo, rejilla de rombos en la tapa. Se imprime sin soportes.',
+    foot1: 'Diseño: paredes de 2,6 mm, fondo de 1,2 mm, tapa con borde de 5 mm arriba y abajo (se guarda bajo la caja durante la partida) y salientes de encaje en las esquinas, huecos para sacar la tapa en las esquinas y los lados largos, muescas para los dedos en ambos extremos, agujero para empujar en el fondo, rejilla de rombos en el fondo y la tapa. Se imprime sin soportes.',
     foot2: 'Los valores sin fundas son una propuesta (carta + 1 mm). Imprime primero una caja como prueba de ajuste.',
   },
   it: {
@@ -150,7 +150,7 @@ export const T = {
     errSize: v => `La scatola supera ${v} mm e non entra nel piano di stampa.`,
     lowRim: 'Scatola bassa: bordo del coperchio 4 mm invece di 5 mm. Questo coperchio va solo su scatole di questa altezza.',
     capacity: (n, s) => `Spazio per circa ${n} carte ${s ? 'con' : 'senza'} bustine.`,
-    foot1: 'Struttura: pareti 2,6 mm, fondo 1,2 mm, coperchio con bordo di 5 mm sopra e sotto (si ripone sotto la scatola durante il gioco) e nottolini a scatto agli angoli, incavi per sollevare il coperchio agli angoli e sui lati lunghi, tacche per le dita su entrambe le estremità, foro di spinta nel fondo, griglia a rombi nel coperchio. Si stampa senza supporti.',
+    foot1: 'Struttura: pareti 2,6 mm, fondo 1,2 mm, coperchio con bordo di 5 mm sopra e sotto (si ripone sotto la scatola durante il gioco) e nottolini a scatto agli angoli, incavi per sollevare il coperchio agli angoli e sui lati lunghi, tacche per le dita su entrambe le estremità, foro di spinta nel fondo, griglia a rombi nel fondo e nel coperchio. Si stampa senza supporti.',
     foot2: 'I valori senza bustine sono una proposta (carta + 1 mm). Stampa prima una scatola come prova di misura.',
   },
   nl: {
@@ -178,7 +178,7 @@ export const T = {
     errSize: v => `De doos is groter dan ${v} mm en past niet op het printbed.`,
     lowRim: 'Lage doos: dekselrand 4 mm in plaats van 5 mm. Dit deksel past alleen op dozen van deze hoogte.',
     capacity: (n, s) => `Ruimte voor ongeveer ${n} kaarten ${s ? 'met' : 'zonder'} sleeves.`,
-    foot1: 'Opbouw: wand 2,6 mm, bodem 1,2 mm, deksel met rand van 5 mm boven en onder (tijdens het spel onder de doos op te bergen) en kliknokjes in de hoeken, grepen voor het deksel in de hoeken en aan de lange zijden, vingeruitsparingen aan beide kopse kanten, duwgat in de bodem, ruitjesrooster in het deksel. Print zonder support.',
+    foot1: 'Opbouw: wand 2,6 mm, bodem 1,2 mm, deksel met rand van 5 mm boven en onder (tijdens het spel onder de doos op te bergen) en kliknokjes in de hoeken, grepen voor het deksel in de hoeken en aan de lange zijden, vingeruitsparingen aan beide kopse kanten, duwgat in de bodem, ruitjesrooster in de bodem en het deksel. Print zonder support.',
     foot2: 'De waarden zonder sleeves zijn een voorstel (kaart + 1 mm). Print eerst één doos als pastest.',
   },
   pl: {
@@ -206,7 +206,7 @@ export const T = {
     errSize: v => `Pudełko przekracza ${v} mm i nie zmieści się na stole drukarki.`,
     lowRim: 'Niskie pudełko: rant pokrywki 4 mm zamiast 5 mm. Ta pokrywka pasuje tylko do pudełek tej wysokości.',
     capacity: (n, s) => `Miejsce na około ${n} kart ${s ? 'w koszulkach' : 'bez koszulek'}.`,
-    foot1: 'Budowa: ścianki 2,6 mm, dno 1,2 mm, pokrywka z rantem 5 mm u góry i u dołu (podczas gry chowa się pod pudełkiem) i zatrzaskami w narożnikach, wgłębienia do zdejmowania pokrywki w narożnikach i na dłuższych bokach, wycięcia na palce na obu końcach, otwór do wypychania w dnie, kratka w romby w pokrywce. Druk bez podpór.',
+    foot1: 'Budowa: ścianki 2,6 mm, dno 1,2 mm, pokrywka z rantem 5 mm u góry i u dołu (podczas gry chowa się pod pudełkiem) i zatrzaskami w narożnikach, wgłębienia do zdejmowania pokrywki w narożnikach i na dłuższych bokach, wycięcia na palce na obu końcach, otwór do wypychania w dnie, kratka w romby w dnie i pokrywce. Druk bez podpór.',
     foot2: 'Wartości dla kart bez koszulek to propozycja (karta + 1 mm). Przed serią wydrukuj jedno pudełko jako test dopasowania.',
   },
   ja: {
@@ -234,7 +234,7 @@ export const T = {
     errSize: v => `ボックスが ${v} mm を超えるため、ビルドプレートに載りません。`,
     lowRim: '低いボックス: フタの縁は 5 mm ではなく 4 mm です。このフタは同じ高さのボックス専用です。',
     capacity: (n, s) => `スリーブ${s ? 'あり' : 'なし'}のカードが約 ${n} 枚入ります。`,
-    foot1: '構造: 壁 2.6 mm、底 1.2 mm。フタは上下に 5 mm の縁があり（プレイ中はボックスの下に収納可能）、角にスナップ用の突起があります。角と長辺にフタを外すための指掛けくぼみ、両端に指掛けの切り欠き、底に押し出し穴、フタにひし形の格子。サポートなしで印刷できます。',
+    foot1: '構造: 壁 2.6 mm、底 1.2 mm。フタは上下に 5 mm の縁があり（プレイ中はボックスの下に収納可能）、角にスナップ用の突起があります。角と長辺にフタを外すための指掛けくぼみ、両端に指掛けの切り欠き、底に押し出し穴、底とフタにひし形の格子。サポートなしで印刷できます。',
     foot2: 'スリーブなしの値は提案値です（カード + 1 mm）。まとめて印刷する前に、1個で合わせを確認してください。',
   },
   ko: {
@@ -262,7 +262,7 @@ export const T = {
     errSize: v => `박스가 ${v} mm보다 커서 출력 베드에 올라가지 않습니다.`,
     lowRim: '낮은 박스: 뚜껑 테두리가 5 mm 대신 4 mm입니다. 이 뚜껑은 같은 높이의 박스에만 맞습니다.',
     capacity: (n, s) => `슬리브 ${s ? '있는' : '없는'} 카드 약 ${n}장이 들어갑니다.`,
-    foot1: '구조: 벽 2.6 mm, 바닥 1.2 mm, 위아래에 5 mm 테두리가 있는 뚜껑(게임 중에는 박스 아래에 끼워 보관)과 모서리의 스냅 돌기, 모서리와 긴 면에 뚜껑을 여는 손잡이 홈, 양쪽 끝의 손가락 홈, 바닥의 밀어내기 구멍, 뚜껑의 마름모 격자. 서포트 없이 출력할 수 있습니다.',
+    foot1: '구조: 벽 2.6 mm, 바닥 1.2 mm, 위아래에 5 mm 테두리가 있는 뚜껑(게임 중에는 박스 아래에 끼워 보관)과 모서리의 스냅 돌기, 모서리와 긴 면에 뚜껑을 여는 손잡이 홈, 양쪽 끝의 손가락 홈, 바닥의 밀어내기 구멍, 바닥과 뚜껑의 마름모 격자. 서포트 없이 출력할 수 있습니다.',
     foot2: '슬리브 없음 값은 제안값입니다(카드 + 1 mm). 여러 개를 출력하기 전에 하나로 맞춤을 확인하세요.',
   },
 };

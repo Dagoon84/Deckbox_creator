@@ -29,6 +29,9 @@ Geometrie und Werte:
 - Griffmulden für die Kappe an den langen Seiten (20 mm) und an allen 4 Ecken (je 10 mm um die
   Ecke, oben und unten): An der Ecke lässt sich die Kappe besonders bei großen Boxen leichter abhebeln.
 - Rautengitter in der Kappe (Rautengröße 11–14 mm, automatisch passend zur Fläche).
+- Rautengitter auch im Boden (spart Material, z. B. Standard 20 mm 17,1 → 14,7 cm³): 3 mm geschlossener
+  Rand zu den Wänden, 3 mm geschlossener Ring um das Drückloch; Rauten 7–14 mm, damit auch kleine
+  Formate Löcher bekommen.
 - Wand 2,6 mm, Boden 1,2 mm, Kappenplatte 1,2 mm. Höhe geschlossen = Innenhöhe + 2,4 mm.
 - Innenhöhe unter ca. 10,3 mm: Rand 4 mm statt 5 mm (Kappe passt dann nur zu dieser Höhe).
   Minimum 9 mm.
