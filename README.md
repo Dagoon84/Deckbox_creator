@@ -26,6 +26,8 @@ Geometrie und Werte:
 - Kappe mit 5-mm-Rand oben und unten (1,35 mm eingerückt, Spiel 0,1 mm), Rastnoppen an den
   Ecken (2 je Ecke). Die Kappe lässt sich im Spiel unter die Box stecken.
 - Griffkerben an beiden Stirnseiten, Drückloch 40 × 18 mm im Boden.
+- Griffmulden für die Kappe an den langen Seiten (20 mm) und an allen 4 Ecken (je 10 mm um die
+  Ecke, oben und unten): An der Ecke lässt sich die Kappe besonders bei großen Boxen leichter abhebeln.
 - Rautengitter in der Kappe (Rautengröße 11–14 mm, automatisch passend zur Fläche).
 - Wand 2,6 mm, Boden 1,2 mm, Kappenplatte 1,2 mm. Höhe geschlossen = Innenhöhe + 2,4 mm.
 - Innenhöhe unter ca. 10,3 mm: Rand 4 mm statt 5 mm (Kappe passt dann nur zu dieser Höhe).

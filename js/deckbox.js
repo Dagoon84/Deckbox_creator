@@ -22,6 +22,9 @@ const K_UNTEN = 0.1;               // lower rim inset extra (elephant foot)
 const K_BETT = 0.4;                // 45° bed chamfer of the box
 const K_GRIFF_B = 20.0;            // grip recess on the long sides
 const K_GRIFF_H = 5.0;
+const ECK_A = 10.0;                // corner grip recess: reaches this far along each side from the corner
+                                   // (user idea 2026-10-24: levering the cap off at a corner works better
+                                   // than from the middle of a long side, especially on large boxes)
 const RAUTE_WAHL = [11, 11.5, 12, 12.5, 13, 13.5, 14];
 const RAUTE_STEG = 2.0;
 const GITTER_RAND = 3.0;
@@ -102,6 +105,33 @@ export function makeDeckbox(wasm) {
       extrudeYZ(pts.map(([d, z]) => [sg * (B / 2 + d), z]), -K_GRIFF_B / 2, K_GRIFF_B)));
   }
 
+  // Corner grip recesses: same profile as griffmulde (depth = rim inset, 45° run-out), wrapped
+  // around all four vertical corners, below the top cap edge and above the bottom rim.
+  function eckmulden(m) {
+    const { L, B, HB, K_H, GRIFF_H } = m;
+    const s = K_S + 0.05, su = K_S + K_UNTEN + 0.05;
+    const zt = HB - K_H, zb = K_H;
+    const ecken = (z0, z1) => Manifold.union([1, -1].flatMap(sx => [1, -1].map(sy =>
+      Manifold.cube([ECK_A + 5, ECK_A + 5, z1 - z0])
+        .translate([sx > 0 ? L / 2 - ECK_A : -L / 2 - 5, sy > 0 ? B / 2 - ECK_A : -B / 2 - 5, z0]))));
+    // top: recess from the cap edge down by GRIFF_H, then 45° back to the outer wall
+    const o0 = zt - GRIFF_H - s - 0.5, o1 = zt + 0.3;
+    const obenBleibt = Manifold.union([
+      platte(L - 2 * s, B - 2 * s, R_E - s, zt - GRIFF_H - E, o1 - zt + GRIFF_H + 1),
+      kegel(L + 1, B + 1, R_E + 0.8, o0 - E, s + 0.5 + E),   // radius != outer corner where they meet
+    ]);
+    // bottom: mirrored, recess above the lower rim, 45° roof (prints without supports)
+    const u0 = zb - 0.3, u1 = zb + GRIFF_H + su + 0.5;
+    const untenBleibt = Manifold.union([
+      platte(L - 2 * su, B - 2 * su, R_E - su, u0 - 1, zb + GRIFF_H - u0 + 1 + E),
+      kegel(L - 2 * su, B - 2 * su, R_E - su + 0.5, zb + GRIFF_H, su + 0.5 + E, true),   // centre differs from the top one
+    ]);
+    return Manifold.union([
+      ecken(o0, o1).subtract(obenBleibt),
+      ecken(u0, u1).subtract(untenBleibt),
+    ]);
+  }
+
   function noppenLagen(m, zs) {
     const lr = m.L - 2 * K_S, br = m.B - 2 * K_S;
     const lagen = [];
@@ -137,7 +167,7 @@ export function makeDeckbox(wasm) {
     ];
     for (const [x, y, z, a, sg] of noppenLagen(m, [K_H / 2, HB - K_H / 2]))
       teile.push(kugelkappe(x, y, z, a, sg, NOPPE_R, NOPPE_H));
-    return Manifold.union(teile).subtract(Manifold.union([griffmulde(m, 1), griffmulde(m, -1)]));
+    return Manifold.union(teile).subtract(Manifold.union([griffmulde(m, 1), griffmulde(m, -1), eckmulden(m)]));
   }
 
   // ---------- finger notch (lofted, roundings built in) ----------
@@ -148,15 +178,16 @@ export function makeDeckbox(wasm) {
     }
   }
   function kerbeProfil(m, d) {
-    const { HB } = m;
-    const b2 = m.KERBE_B / 2 + d, ru = KERBE_R_U + d, ro = m.KERBE_R_O - d, zb = BODEN, top = HB + 2;
+    // arcs run into a plane 0.05 above the top edge, so they cut it instead of touching it tangentially
+    const zo = m.HB + 0.05;
+    const b2 = m.KERBE_B / 2 + d, ru = KERBE_R_U + d, ro = m.KERBE_R_O - d, zb = BODEN, top = zo + 2;
     const yo = b2 + ro + 1;
-    const p = [[-yo, top], [-yo, HB]];
-    arc(-(b2 + ro), HB - ro, ro, 90, 0, p);
+    const p = [[-yo, top], [-yo, zo]];
+    arc(-(b2 + ro), zo - ro, ro, 90, 0, p);
     arc(-(b2 - ru), zb + ru, ru, 180, 270, p);
     arc(b2 - ru, zb + ru, ru, 270, 360, p);
-    arc(b2 + ro, HB - ro, ro, 180, 90, p);
-    p.push([yo, HB], [yo, top]);
+    arc(b2 + ro, zo - ro, ro, 180, 90, p);
+    p.push([yo, zo], [yo, top]);
     return p;   // counter-clockwise in (y, z)
   }
   function loft(stationen) {   // stationen: [[x, pts2d], ...], same point count, increasing x
@@ -190,6 +221,9 @@ export function makeDeckbox(wasm) {
       s.push([xa - u, ra - Math.sqrt(Math.max(ra * ra - (ra - u) ** 2, 0))]);
     }
     s.push([xa + 2, ra]);
+    // stations exactly in the inner or outer wall plane produce coincident edges -> move them off
+    s = s.map(([x, d]) => [Math.abs(x - xi) < 1e-9 ? xi - 0.02 : Math.abs(x - xa) < 1e-9 ? xa + 0.02 : x, d]);
+    s.sort((a, b) => a[0] - b[0]);
     s = s.filter((p, j) => j === 0 || p[0] - s[j - 1][0] > 0.02);
     const teil = loft(s.map(([x, d]) => [x, kerbeProfil(m, d)]));
     return sx > 0 ? teil : teil.rotate([0, 0, 180]);
