@@ -6,7 +6,7 @@ import { make3mf } from './export3mf.js';
 import { SPRACHEN, T } from './i18n.js';
 
 // Card formats: common name, card size without sleeve (B × L) and the inner size for sleeved
-// cards, taken from printed boxes / user measurements (Inserts/Standard-Kartenbox, 2026-10-19).
+// cards (user measurements). The tool is the only place these values are kept.
 const FORMATE = [
   { id: '63.5x88', name: 'Standard', karte: [63.5, 88], sleeve: [68, 93] },
   { id: '59x92', name: 'Euro', karte: [59, 92], sleeve: [63.5, 97.3] },

@@ -1,4 +1,4 @@
-// Deckbox geometry – port of Inserts/Standard-Kartenbox/standard_kartenbox.py (build123d)
+// Deckbox geometry – originally ported from a build123d model (card box with snap-on cap)
 // to manifold-3d. Same design: cap ("Kappe") with rim top and bottom and snap bumps,
 // finger notches at both short ends, push-out slot in the floor, diamond grid in the cap.
 //

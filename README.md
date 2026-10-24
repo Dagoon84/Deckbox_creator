@@ -20,8 +20,8 @@ Sprache wählbar: Deutsch, English, Français, Español, Italiano, Nederlands, P
 
 ## Design
 
-Übernommen aus dem Projekt *Standard-Kartenbox* (Brettspiel-Inserts, build123d-Modell
-`standard_kartenbox.py`), gleiche Geometrie und Werte:
+Ursprünglich aus einem build123d-Modell übernommen; das Tool ist jetzt die einzige Quelle für
+Geometrie und Werte:
 
 - Kappe mit 5-mm-Rand oben und unten (1,35 mm eingerückt, Spiel 0,1 mm), Rastnoppen an den
   Ecken (2 je Ecke). Die Kappe lässt sich im Spiel unter die Box stecken.
